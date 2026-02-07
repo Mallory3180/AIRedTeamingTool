@@ -1,0 +1,23 @@
+# 仮置き／差替え必須: orchestrator/embedding/rag settings
+orchestrator_llm:
+  backend: ollama
+  model: llama3
+  base_url: http://ollama:11434
+  api_key_env: ORCHESTRATOR_API_KEY
+
+embedding:
+  backend: ollama
+  model: nomic-embed-text
+  base_url: http://ollama:11434
+
+rag:
+  persist_path: data/chroma_db
+  k: 4
+  chunk_size: 800
+  chunk_overlap: 80
+
+logging:
+  logs_root: data/logs
+  max_concurrency: 20
+  timeout_seconds: 30
+  max_retries: 3
