@@ -1,0 +1,49 @@
+version: "3.9"
+services:
+  orchestrator:
+    build: .
+    container_name: orchestrator
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: ["sleep", "infinity"]
+    depends_on:
+      - ollama
+      - chroma
+      - target
+    networks:
+      - internal
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - internal
+
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: chroma
+    ports:
+      - "8000:8000"
+    networks:
+      - internal
+
+  target:
+    image: ollama/ollama:latest
+    container_name: target
+    volumes:
+      - target_data:/root/.ollama
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  ollama_data:
+  target_data:

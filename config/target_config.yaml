@@ -1,0 +1,7 @@
+# 仮置き／差替え必須: target REST config
+base_url: http://target:11434
+endpoint: /api/generate
+request_key: prompt
+response_key: response
+model: llama3
+api_key_env: TARGET_API_KEY
