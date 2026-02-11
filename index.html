@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>恋のクエスト - RPGデートゲーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header>
+      <h1>💖 恋のクエスト</h1>
+      <p class="subtitle">彼女に贈る、RPG風デートアドベンチャー</p>
+    </header>
+
+    <section id="setup" class="panel">
+      <h2>冒険の準備</h2>
+      <label for="partnerName">ヒロインの名前</label>
+      <input id="partnerName" type="text" maxlength="20" placeholder="例：ゆい" />
+      <button id="startBtn">ゲーム開始</button>
+    </section>
+
+    <section id="game" class="panel hidden">
+      <div class="status-grid">
+        <div>Day <span id="day">1</span>/5</div>
+        <div>❤️ 好感度: <span id="affection">0</span></div>
+        <div>⚡ 元気: <span id="energy">8</span></div>
+      </div>
+      <h2 id="sceneTitle"></h2>
+      <p id="sceneText"></p>
+      <div id="choices" class="choices"></div>
+      <p id="log" class="log"></p>
+    </section>
+
+    <section id="ending" class="panel hidden">
+      <h2 id="endingTitle"></h2>
+      <p id="endingText"></p>
+      <button id="restartBtn">もう一度プレイ</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

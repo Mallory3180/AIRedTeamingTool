@@ -1,0 +1,116 @@
+:root {
+  color-scheme: dark;
+  --bg: #12041d;
+  --panel: #221136;
+  --text: #fcefff;
+  --accent: #ff6fb1;
+  --accent-2: #7f6bff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #2e0d42, var(--bg));
+  color: var(--text);
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+  padding: 20px;
+}
+
+.game-shell {
+  width: min(760px, 100%);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+.panel {
+  background: color-mix(in oklab, var(--panel) 90%, black);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hidden {
+  display: none;
+}
+
+label,
+input,
+button {
+  display: block;
+  width: 100%;
+}
+
+label {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+input {
+  border-radius: 10px;
+  border: 1px solid #8d7adb;
+  background: #150d24;
+  color: var(--text);
+  padding: 12px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 14px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  color: white;
+  background: linear-gradient(125deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.status-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+#sceneText {
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.choices {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.log {
+  margin-top: 14px;
+  min-height: 1.5em;
+  color: #ffd7e8;
+}
